@@ -1,0 +1,199 @@
+<!-- Curso completo de manejo de HTML midudev -->
+<!Doctype html>
+<html>
+    <head>
+        <!--Metados-->
+        <meta charset="utf-8"> <!--codificación-->    
+        <meta name="viewport" content="width=device-whith">
+        <title>Lic. Andres Soria</title>
+        
+        <meta name="description" content="Portaforlio de Andrés, desarrollador full stack junior con 1 año de experiencia">
+        <!-- OPEN GRAPH-->
+        <meta property="og:title" content="Presentación formal de mi trabajo">
+        <meta property="og:image" content="images/yo.JPG">
+        <meta property="og:image_alt" content="fotografía de Andrés Soria">
+
+        <link rel="alternate" href="https://andes.dev/en" hreflang="en-GB">
+        <link rel="canonical" href="https://andes.dev/" hreflang="en-GB">
+        
+
+        <meta name="robots" content="index, follw">
+        <meta name="theme-color" content="#09f">
+        
+        <link rel="icon" type="image/jpg" href="images/yo.JPG" >
+        <link rel="stylesheet" href="../../css/style1.css">
+    </head>
+    
+    <body>
+        <header>
+            <h1>Portaforlio de Andrés</h1>
+            <nav >
+                <!--enlaces internos-->
+                <a class="navega" href="#experiencia">Experiencia</a>
+                <a class="navega" href="#proyectos">Proyectos</a>
+                <!--enlaces externos-->
+                <a 
+                    class="navega"
+                    href="#https://www.facebook.com/andres.soria"
+                    target="_blank"
+                    rel="noreferrer"
+                >Facebook</a>
+
+            </nav>
+        </header> 
+        <!--contenido principal de la pagina  -->
+        <main>
+        
+            <p>Estudianete de programación y de matematicas aplicadas con interes en el 
+            <strong>SUPER CÓMPUTO</strong>
+            </p>
+            <h2 id="experiencia">
+                Experiencia
+            </h2>
+            <ul>
+                <li class="exp-list-item">MAC</li>
+                <li class="exp-list-item">TESIS</li>
+                <li class="exp-list-item"><strong>PROXIMAMENTE</strong> MAESTRIA EN CIENCIAS</li>
+            </ul>
+                <a download href="images/yo.JPG">
+                    <img
+                    id="pic-1" #valor unico
+
+                    whith= 200
+                    height= 200
+                    title= "WITCOM 2022"
+                    alt= "Congreso en Cancun México"
+                    src= "images/yo.JPG"
+                >
+                </a> 
+                
+            <h2 id="proyectos">
+                Proyectos realizados
+            </h2>
+            <!--aside es un contenido que se relacion tangencialmente con el contenido principal-->
+            <aside>
+                <header>
+                    <h3>Mis tecnologias favoritas</h3>
+                </header>
+                <ol>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Node.js</li>
+                </ol>
+            </aside>
+            <!--seccion abarca secciones independientes genericas de un contenido-->
+            <section>
+                <!--arcle es un bloque independiente de informacion que se podira entender como un contendio único sin perder su significado -->
+                <article>
+                
+                    <header>
+                        <h4>
+                            Dinamica Molecular GROMACS
+                        </h4>
+                        <p>
+                            Simulaciones de dinamica molecular para blancos moleculares de los derivados 
+                            de los guanidinobenzotiazolez en GSK3-Beta.
+                        </p>
+                        <footer>
+                            <small>Gromacs,CUDA</small>
+                        </footer>
+                    </header>
+                </article>
+                <article>
+                    <header>
+                        <h4>Sistema TRITÓN</h4>
+                    </header>
+                    <p>
+                        Equipo de desarrollo del sistema de indicadores para la Fes Acatlán
+                        además del diseño del testing.
+                    </p>
+                    <footer>
+                        <small>playwright,typeScrpt,mariaDB</small>
+                    </footer>
+                </article>
+                <article>
+                    <header>
+                        <h4>
+                            Software DigitalNETWORK
+                        </h4>
+                    </header>
+                    <p>
+                        Dashboard analico con webscraping para inteligencia de mercado, 
+                        base de datos y ordenes de compro, red neuronal.
+                    </p>
+                    <footer>
+                        <small>playwrigth, python, postgresSQL,typeSript, Node.js </small> 
+                    </footer>
+                </article>
+            </section>
+            <section>
+                <h2> Formulario de contacto</h2>
+                <form action="post" action="/">
+                    <fieldset>
+                        <legend>Informacion personal</legend>
+                        <label style="display: block;">Nombre: 
+                            <input 
+                                type="text" 
+                                name="name" 
+                                placeholder="Andrés Soria"
+                                required>
+                        </label>
+                        <label style="display: block;">Email: 
+                            <input 
+                                type="email"  
+                                name="email" 
+                                placeholder="soca9906@gmail.com"
+                                required>
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Informacion Adicional</legend>
+                        <label for="Telfono">
+                            <input 
+                                type="tel"
+                                name="telefono"
+                                placeholder="5531981647"
+                                pattern="[0-9]{10}">
+                        </label>
+                        <div>
+                           <label for="contacto">¿Por que me quieres contactar?</label>
+                            <select name="contacto" id="contacto">
+                                <option value="1">Trabajo</option>
+                                <option value="2">Dudas</option>
+                                <option value="3">Más Información</option>
+                            </select> 
+                        </div>
+                        <div>
+                            <label for="terms">¿Acpetas los términos?</label>
+                            <input type="checkbox" id="terms" required>
+                        </div>
+                        <div>
+                            <datalist id="languages">
+                                <option value="JavaScript"></option>
+                                <option value="Python"></option>
+                                <option value="SQL"></option>
+                                <option value="C"></option>
+                            </datalist>
+                            <label for="languages">
+                                ¿Con qué lenguaje quieres que te ayude?
+                                <input list="languages" name="lenguages">
+                            </label>
+                        </div>
+                    </fieldset>
+                    <input type="submit" value="Enviar correo">
+                </form>
+            </section>
+        </main>
+        <footer>
+            Copyright @ 2026 - Todos los derechos reservados para los proyectos y metodologías aqui presentadas.
+            <a href="mailto:soca9906@gmail.com">Enviame un correo</a>
+            <a 
+                href="whatsapp://send?
+                text="Hola te contacto desde la pagina web!"
+                >Contatame por whatsapp</a>
+        </footer>
+    </body>
+
+</html>
+

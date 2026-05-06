@@ -1,0 +1,15 @@
+/*Los pixeles estan conciderados medidas absolutas
+    mientras que los % como medidas relativas*/
+.container{
+    width: 250px;    /*view port with*/
+    height: 250px;   /*view port height*/
+    background-color: red;
+    padding: 10; /*va en sentido de las manesillas del reloj*/
+    border: 10px solid white;
+    margin: 150px;
+    box-sizing: border-box;
+}
+body{
+    background: blue;
+    margin: 0;
+}   

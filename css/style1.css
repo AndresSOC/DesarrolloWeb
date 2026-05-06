@@ -1,0 +1,50 @@
+/*operadores de selectores
+h1 > p {
+}           aqui se estila el hijo directo
+h1 ~ p {
+}           hermanos que aperecen despues
+h1 + p {    
+}           justo el que viene despues
+*/
+/* Declariación del css
+selector{
+    propiedad:valor;   
+}*/
+
+h1 {
+    /*color:rgb(0 1 0 / 90%)*/
+    /*color:rgb(0 1 0 / 90%)*/
+    color: hsl(120, 100%, 30%);
+    border-width: 3px;
+    border-style: solid;
+    border-color: currentColor;
+}
+body{
+    background: rgb(0, 0, 0);
+    color: aliceblue;
+}
+/*Con . se accede a la clase y con # al id*/
+.navega{
+    color: brown;
+}
+.navega:hover{
+    /* Outline es es el contorno y no afecta al contenido mientras que border si afecta*/
+    outline: 5px solid rebeccapurple
+}
+.navega:active{
+    outline: 5px solid teal
+}
+
+input:focus{
+    outline: 3px solid teal
+}
+#experiencia{
+    background: rgb(221, 140, 19);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.exp-list-item:first-child{
+    color: aqua;
+}
+.exp-list-item:last-child{
+    color: yellowgreen;
+}

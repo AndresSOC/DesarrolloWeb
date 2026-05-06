@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Contacto</title>
+    <style>
+
+        /* Estilos body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#f5f5f5;
+            display:flex;
+            justify-content:center;
+            padding:40px;
+        }
+        
+        /* Estilos .formulario */
+        .formulario{
+            background-color:white;
+            padding:30px;
+            border-radius:8px;
+            width:400px;
+            color:#1565c0;
+        }
+        
+        /* Estilos .formulario h2 */
+        .formulario h2 {
+            color:#1565c0;
+            text-align:center;
+        }
+        
+        label {
+            display:block; 
+            margin-top:15px;
+            font-weight:bold;
+        }
+        /* Estilos input, select, textarea */
+        input, select, textarea {
+            width:100%;
+            padding:8px;
+            border:1px solid #ccc ;
+            border-radius:4px;
+            border-color:#1565c0;
+        }
+        
+        /* Estilos input:focus, textarea:focus */
+        input:focus, textarea:focus{
+            border-color:#1565c0;
+            outline:none;
+        }
+
+        /* Estilos button */
+        button{
+            background-color:#1565c0; 
+            color:white;
+            padding:10px 20px;
+            border:none;
+            border-radius:4px;
+            width:100%;
+            margin-top:20px;
+        }
+        
+        /* Estilos button:hover */
+        button:hover {
+            background-color:#0d47a1;
+        }        
+        
+    </style>
+</head>
+<body>
+
+    <form class="formulario">
+
+        <!-- Título del formulario -->
+        <h2>Elementos de un formulario</h2>
+
+        <!-- Campo nombre: label + input[type=text] -->
+        <label for="nombre">nombre:</label>
+        <input type="text" required id="nombre">
+
+        <!-- Campo correo: label + input[type=email] -->
+        <label for="correo">correo:</label>
+        <input type="email" required id="correo">
+
+        <!-- Campo telefono: label + input[type=tel] -->
+        <label for="telefono">telefono:</label>
+        <input type="tel" id="telefono">
+
+        <!-- Campo asunto: label + select + option -->
+        <label for="asunto">asunto:</label>
+        <select id="asunto">
+            <option>Saludar</option>
+            <option>Contratar</option>
+            <option>Depositar</option>
+        </select>
+
+        <!-- Campo mensaje: label + textarea -->
+        <label for="mensaje">mansaje:</label>
+        <textarea id="mensaje" required></textarea>
+        
+        <!-- Botón enviar: button[type=submit]-->
+        <button type="submit">enviar</button>
+
+    </form>
+
+</body>
+</html>
