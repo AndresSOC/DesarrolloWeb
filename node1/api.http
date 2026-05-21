@@ -18,7 +18,8 @@ POST http://localhost:3000/cursos/matematicas
 Content-Type: application/json
 
 {
- "id": "3",
+ "id": 3,
+ "titulo": "Aprende Ecuaciones diferenciales",
  "tema": "ecuaciones diferenciales",
  "vistas": 12427,
  "nivel": "medio"

@@ -1,0 +1,24 @@
+{
+  "tareas": [
+    {
+      "id": 1,
+      "titulo": "Estudiar JavaScript",
+      "completada": true
+    },
+    {
+      "id": 2,
+      "titulo": "Hacer ejercicio",
+      "completada": true
+    },
+    {
+      "id": 3,
+      "titulo": "Leer un libro",
+      "completada": false
+    },
+    {
+      "id": 4,
+      "titulo": "Aprender Node",
+      "completada": false
+    }
+  ]
+}

@@ -1,21 +1,9 @@
 import express, { json } from 'express'
 import cursos from './cursos.json' with { type: 'json' }
-import { z } from 'zod'
 
 const app = express()
 
 app.use(express.json())
-
-
-const cursoMatematicasSchema = z.object({
-  id: z.number(),
-  titulo: z.string(),
-  tema: z.string(),
-  vistas: z.number().int().nonnegative(),
-  nivel: z.enum(['basico', 'intermedio', 'avanzado'])
-})
-
-const cursoPatchSchema = cursoMatematicasSchema.partial()
 
 // métodos de solicitud
 
@@ -47,14 +35,31 @@ app.get('/cursos/bases_de_datos', (req, res) => {
 // Funcion para manejar solicitudes POST
 // POST nos permite enviar o crear datos
 app.post('/cursos/matematicas', (req, res) => {
-  
+  const { id, titulo, tema, vistas, nivel } = req.body
 
-  const result = cursoMatematicasSchema.safeParse(req.body)
+  // console.log(req.body)
 
-  if (!result.success) {
-    return res.status(400).json({
-      error: result.error.issues
-    })
+  // Validaciones manuales
+
+  if (typeof id !== 'number') {
+    return res.status(400).json({ error: 'El id debe ser un número' })
+  }
+
+  if (!titulo || typeof titulo !== 'string') {
+    return res.status(400).json({ error: 'El titulo es obligatorio y debe ser texto' })
+  }
+
+  if (!tema || typeof tema !== 'string') {
+    return res.status(400).json({ error: 'El tema es obligatorio y debe ser texto' })
+  }
+
+  if (typeof vistas !== 'number' || vistas < 0) {
+    return res.status(400).json({ error: 'Las vistas deben ser un número positivo' })
+  }
+
+  const nivelesValidos = ['basico', 'intermedio', 'avanzado']
+  if (!nivelesValidos.includes(nivel)) {
+    return res.status(400).json({ error: 'Nivel inválido' })
   }
 
   const nuevoCurso = {
@@ -74,6 +79,7 @@ app.post('/cursos/matematicas', (req, res) => {
 
   res.status(201).json(nuevoCurso)
 })
+
 
 app.put('/cursos/programacion/:id', (req, res) => {
   const id = parseInt(req.params.id)

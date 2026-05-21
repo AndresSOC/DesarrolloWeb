@@ -1,19 +1,20 @@
 import express, { json } from 'express'
 import cursos from './cursos.json' with { type: 'json' }
-import {
-  cursoMatematicasSchema,
-  cursoMatematicasPatchSchema,
-  cursoBDSchema,
-  cursoBDPatchSchema,
-  cursoProgramacionSchema,
-  cursoProgramacionPatchSchema
-} from './schemas/cursos-schemas.js'
-
-import { validate } from './middlewares/validate.js'
+import { z } from 'zod'
 
 const app = express()
 
 app.use(express.json())
+
+const cursoMatematicasSchema = z.object({
+  id: z.number(),
+  titulo: z.string(),
+  tema: z.string(),
+  vistas: z.number().int().nonnegative(),
+  nivel: z.enum(['basico', 'intermedio', 'avanzado'])
+})
+
+const cursoPatchSchema = cursoMatematicasSchema.partial()
 
 // métodos de solicitud
 
@@ -44,9 +45,15 @@ app.get('/cursos/bases_de_datos', (req, res) => {
 
 // Funcion para manejar solicitudes POST
 // POST nos permite enviar o crear datos
-app.post('/cursos/matematicas', 
-  validate(cursoMatematicasSchema),
-  (req, res) => {
+app.post('/cursos/matematicas', (req, res) => {
+  const result = cursoMatematicasSchema.safeParse(req.body)
+
+  if (!result.success) {
+    return res.status(400).json({
+      error: result.error.issues
+    })
+  }
+
   const nuevoCurso = {
     id,
     titulo,
@@ -66,9 +73,7 @@ app.post('/cursos/matematicas',
 })
 
 
-app.put('/cursos/programacion/:id',
-validate(cursoProgramacionSchema),   
-  (req, res) => {
+app.put('/cursos/programacion/:id', (req, res) => {
   const id = parseInt(req.params.id)
   const data = req.body
 
@@ -87,14 +92,9 @@ validate(cursoProgramacionSchema),
   res.json(cursos.programacion[index])
 })
 
-app.patch('/cursos/base_de_datos/:id', 
-  validate(cursoBDPatchSchema)
-  ,(req, res) => {
+app.patch('/cursos/base_de_datos/:id', (req, res) => {
   const id = parseInt(req.params.id)
   const data = req.body
-
-  
-
   const curso = cursos.bases_de_datos.find(curso => curso.id === id)
 
   if (!curso) {
