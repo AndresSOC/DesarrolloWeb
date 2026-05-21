@@ -1,0 +1,27 @@
+{
+  "name": "node2",
+  "version": "1.0.0",
+  "description": "Proyecto de la fes Acatlán ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "web",
+    "desarrolo",
+    "web",
+    "fes",
+    "acatlan",
+    "unam"
+  ],
+  "author": "andres soria",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "3.1.14"
+  },
+  "dependencies": {
+    "express": "5.2.1",
+    "zod": "^4.4.3"
+  }
+}

@@ -1,0 +1,58 @@
+### Acceder a la ruta raíz o página principal
+GET http://localhost:3000/
+
+### Recuperar información de los cursos
+GET http://localhost:3000/cursos
+
+### Recuperar cursos de programación
+GET http://localhost:3000/cursos/programacion 
+
+### Recuperar cursos de matemáticas
+GET http://localhost:3000/cursos/matematicas 
+todo
+### Recuperar cursos de bases de datos
+GET http://localhost:3000/cursos/bases_de_datos 
+
+### Crear un nuevo curso de matemáticas
+POST http://localhost:3000/cursos/matematicas
+Content-Type: application/json
+
+{
+ "id": "3",
+ "tema": "ecuaciones diferenciales",
+ "vistas": 12427,
+ "nivel": "medio"
+}
+### Modificartodo un curso de programacion
+PUT http://localhost:3000/cursos/programacion/1
+Content-Type: application/json
+
+{
+  "titulo": "Aprende Ensamblador",
+  "lenguaje": "ensamblador",
+  "vistas": 9999,
+  "nivel": "avanzado"
+}
+
+### Modificamos la propiedad vistas de el curso 1 de BD
+PATCH http://localhost:3000/cursos/base_de_datos/1
+Content-Type: application/json
+
+{
+ "vistas": 20000
+}
+
+### Borramos un curso de matematicas
+DELETE http://localhost:3000/cursos/matematicas/3
+
+### Recuperar curso de matematicas eliminado
+POST http://localhost:3000/cursos/matematicas
+Content-Type: application/json
+
+{
+ "id": 3,
+ "titulo": "Aprende Ecuaciones diferenciales",
+ "tema": "ecuaciones diferenciales",
+ "vistas": 12427,
+ "nivel": "medio"
+}
